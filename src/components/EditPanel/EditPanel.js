@@ -6,15 +6,6 @@ import { v4 as uuidv4 } from "uuid";
 const EditPanel = ({ contactToEdit, handleSave }) => {
   const [editedItem, setEditedItem] = useState(contactToEdit);
 
-  useEffect(() => {
-    // the API doesn't work. I'm guessing the key is invalid?
-    fetch(
-      " https://maps.googleapis.com/maps/api/geocode/json?address=paris&key=AIzaSyDKvvBgAkSCugEbXckutuAFuqPzthsCnJ8",
-    )
-      .then((data) => data.json())
-      .then((data) => console.log(data));
-  }, [contactToEdit]);
-
   // id is taken from the target and used to give the property name
   const handleChange = (e) => {
     const { value, id } = e.target;
